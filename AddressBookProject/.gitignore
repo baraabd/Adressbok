@@ -1,0 +1,27 @@
+﻿# Build folders
+bin/
+obj/
+
+# Visual Studio files
+.vs/
+*.user
+*.suo
+*.vscode/
+
+# NuGet packages
+*.nupkg
+packages/
+
+# Logs
+*.log
+
+# Windows thumbnail cache
+Thumbs.db
+
+# This .gitignore file tells Git which files and folders to ignore
+# We use it to avoid uploading:
+# - build folders (bin/ and obj/)
+# - temporary Visual Studio files (*.user, *.suo, .vs/)
+# - logs and other unnecessary files
+# This keeps the repository clean and avoids conflicts for the team
+
