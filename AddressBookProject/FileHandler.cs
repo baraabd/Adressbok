@@ -10,8 +10,8 @@ namespace AddressBookProject
 {
     internal class FileHandler
     {
-        //ToString - Gör om data så det kan skrivas på en rad i txt-filen
-        public static string ToString(Contact contact)
+        //ToText - Gör om data så det kan skrivas på en rad i txt-filen
+        public static string ToText(Contact contact)
         {
             return $"{contact.Name},{contact.StreetAddress},{contact.PostalCode},{contact.City},{contact.Phone},{contact.Email}";
         }
@@ -21,11 +21,22 @@ namespace AddressBookProject
         {
             using (StreamWriter writer = new StreamWriter("contacts.txt", append: true))
             {
-                writer.WriteLine(FileHandler.ToString(contact));
+                writer.WriteLine(FileHandler.ToText(contact));
             }
         }
 
         //ReadFromFile - StreamReader
+        public static void ReadFromFile()
+        {
+            using (StreamReader reader = new StreamReader("contacts.txt"))
+            {
+                string? line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    Console.WriteLine(line);
+                }
+            }
+        }
         //FromString - Läser ut objektet från en rad i txt-filen
 
     }
