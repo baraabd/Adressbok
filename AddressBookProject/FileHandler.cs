@@ -11,7 +11,7 @@ namespace AddressBookProject
     internal class FileHandler
     {
         //ToString - Gör om data så det kan skrivas på en rad i txt-filen
-        public string ToString(Contact contact)
+        public static string ToString(Contact contact)
         {
             return $"{contact.Name},{contact.StreetAddress},{contact.PostalCode},{contact.City},{contact.Phone},{contact.Email}";
         }
@@ -21,7 +21,7 @@ namespace AddressBookProject
         {
             using (StreamWriter writer = new StreamWriter("contacts.txt", append: true))
             {
-                writer.WriteLine(contact.ToString());
+                writer.WriteLine(FileHandler.ToString(contact));
             }
         }
 
