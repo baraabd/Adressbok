@@ -34,7 +34,6 @@ namespace AddressBookProject.UI
             lEmail = new Label();
             dataGridView1 = new DataGridView();
             AddButton = new Button();
-            SaveButton = new Button();
             DeleteButton = new Button();
             UpdateButton = new Button();
             panel1 = new Panel();
@@ -207,25 +206,16 @@ namespace AddressBookProject.UI
             // 
             // AddButton
             // 
-            AddButton.Location = new Point(12, 349);
+            AddButton.Location = new Point(74, 349);
             AddButton.Name = "AddButton";
             AddButton.Size = new Size(131, 40);
             AddButton.TabIndex = 1;
             AddButton.Text = "Addera";
             AddButton.UseVisualStyleBackColor = true;
             // 
-            // SaveButton
-            // 
-            SaveButton.Location = new Point(149, 349);
-            SaveButton.Name = "SaveButton";
-            SaveButton.Size = new Size(131, 40);
-            SaveButton.TabIndex = 2;
-            SaveButton.Text = "Spara";
-            SaveButton.UseVisualStyleBackColor = true;
-            // 
             // DeleteButton
             // 
-            DeleteButton.Location = new Point(286, 349);
+            DeleteButton.Location = new Point(211, 349);
             DeleteButton.Name = "DeleteButton";
             DeleteButton.Size = new Size(131, 40);
             DeleteButton.TabIndex = 3;
@@ -234,7 +224,7 @@ namespace AddressBookProject.UI
             // 
             // UpdateButton
             // 
-            UpdateButton.Location = new Point(423, 349);
+            UpdateButton.Location = new Point(348, 349);
             UpdateButton.Name = "UpdateButton";
             UpdateButton.Size = new Size(131, 40);
             UpdateButton.TabIndex = 4;
@@ -254,7 +244,6 @@ namespace AddressBookProject.UI
             panel1.Controls.Add(Email);
             panel1.Controls.Add(DeleteButton);
             panel1.Controls.Add(PhoneNumber);
-            panel1.Controls.Add(SaveButton);
             panel1.Controls.Add(City);
             panel1.Controls.Add(AddButton);
             panel1.Controls.Add(StreatNumber);
@@ -267,7 +256,7 @@ namespace AddressBookProject.UI
             // 
             // SearchButton
             // 
-            SearchButton.Location = new Point(560, 349);
+            SearchButton.Location = new Point(485, 349);
             SearchButton.Name = "SearchButton";
             SearchButton.Size = new Size(131, 40);
             SearchButton.TabIndex = 12;
@@ -403,7 +392,6 @@ namespace AddressBookProject.UI
         }
         private DataGridView dataGridView1;
         private Button AddButton;
-        private Button SaveButton;
         private Button DeleteButton;
         private Button UpdateButton;
         private Panel panel1;
