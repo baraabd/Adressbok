@@ -53,7 +53,17 @@ namespace AddressBookProject
         public void AddContact(Contact contact)
         {
             ContactsList.Add(contact);
+        public List<Contact> SearchContact(string searchtext)
+        {
+            List<Contact> resultat = new List<Contact>();
+
+            resultat = ContactsList.Where(k => k.Name.ToLower().Contains(searchtext.ToLower()) || k.City.ToLower().Contains(searchtext.ToLower())).ToList();
+
+            return resultat;
+
         }
     }
 
 }
+
+
