@@ -49,6 +49,10 @@ namespace AddressBookProject
             });
         }
 
+        // Method to add a new contact to the list
+        public void AddContact(Contact contact)
+        {
+            ContactsList.Add(contact);
         public List<Contact> SearchContact(string searchtext)
         {
             List<Contact> resultat = new List<Contact>();
