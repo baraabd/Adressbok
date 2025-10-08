@@ -47,18 +47,19 @@ namespace AddressBookProject
                 Phone = "0721112233",
                 Email = "clara@example.com"
             });
-
-            // -------------------------
-            // FUTURE METHODS TO ADD HERE
-            // Implement each feature in a separate branch
-            // Example branch names:
-            // AddContact          → feature/add-contact-name
-            // UpdateContact       → feature/update-contact-name
-            // DeleteContact       → feature/delete-contact-name
-            // SearchContact       → feature/search-contact-name
-            // -------------------------
         }
 
+        public List<Contact> SearchContact(string searchtext)
+        {
+            List<Contact> resultat = new List<Contact>();
+
+            resultat = ContactsList.Where(k => k.Name.ToLower().Contains(searchtext.ToLower()) || k.City.ToLower().Contains(searchtext.ToLower())).ToList();
+
+            return resultat;
+
+        }
     }
 
 }
+
+
