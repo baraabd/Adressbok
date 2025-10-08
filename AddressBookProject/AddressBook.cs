@@ -3,21 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms; // Behövs för MessageBox
 
 namespace AddressBookProject
 {
     public class AddressBook
     {
-        //List to hold contacts
+        // Lista som håller alla kontakter
         public List<Contact> ContactsList { get; set; }
 
-        // Constructor: initialize the list and add some test contacts
+        // Konstruktor: initierar listan och lägger till några testkontakter
         public AddressBook()
         {
-            // Initialize the contact list
             ContactsList = new List<Contact>();
 
-            // Adding test contacts directly when the AddressBook is created
+            // Lägger till hårdkodade kontakter (för testning)
             ContactsList.Add(new Contact
             {
                 Name = "Anna Andersson",
@@ -47,18 +47,29 @@ namespace AddressBookProject
                 Phone = "0721112233",
                 Email = "clara@example.com"
             });
-
-            // -------------------------
-            // FUTURE METHODS TO ADD HERE
-            // Implement each feature in a separate branch
-            // Example branch names:
-            // AddContact          → feature/add-contact-name
-            // UpdateContact       → feature/update-contact-name
-            // DeleteContact       → feature/delete-contact-name
-            // SearchContact       → feature/search-contact-name
-            // -------------------------
         }
 
-    }
+        // -------------------------
+        // Metod: DeleteContact
+        // Tar bort en kontakt baserat på namn
+        // -------------------------
+        public void DeleteContact(string name)
+        {
+            // Försök hitta en kontakt i listan som matchar det angivna namnet (ignorerar stora/små bokstäver)
+            var contactToRemove = ContactsList
+                .FirstOrDefault(c => c.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
 
+            // Om kontakten hittades, ta bort den
+            if (contactToRemove != null)
+            {
+                ContactsList.Remove(contactToRemove);
+                MessageBox.Show($"Kontakten '{name}' har tagits bort.");
+            }
+            else
+            {
+                // Om ingen kontakt hittades, visa ett felmeddelande
+                MessageBox.Show($"Ingen kontakt med namnet '{name}' hittades.");
+            }
+        }
+    }
 }
